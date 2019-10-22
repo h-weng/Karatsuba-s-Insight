@@ -38,5 +38,7 @@ def karatsuba(x, y):
     e = k - a - d
     return a * 10**n2 + e * 10**n1 + d
 
+num1 = 1234
+num2 = 5678
 value = karatsuba(num1, num2)
 print(value)
