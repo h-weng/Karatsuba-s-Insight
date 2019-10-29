@@ -14,16 +14,22 @@
 
 """
 
-def karatsuba(x, y):
+def karatsuba(x,y):
     """convert to string to enumerate the indexes for the digits"""
     xs = str(x) 
     ys = str(y)
+    lx = len(xs)
+    ly = len(ys)
 
-    if len(xs) == 1 and len(ys) == 1:
-        return int(xs) * int(ys)
+    if lx == 1 and ly == 1:
+        return x * y
 
-    n2 = len(xs)
-    n1 = n2//2 
+    m = max(lx, ly)
+    xs = '0' * (m - lx) + xs
+    ys = '0' * (m - ly) + ys
+
+    n1 = (m + 1)//2
+    n2 = m//2
 
     """divide evenly number of digits: x on right, and x on the left"""
     xl = int(xs[:n1])
@@ -34,11 +40,8 @@ def karatsuba(x, y):
 
     a = karatsuba(xl, yl)
     d = karatsuba(xr, yr)
-    k = karatsuba(xl + xr, yl + yr)
-    e = k - a - d
-    return a * 10**n2 + e * 10**n1 + d
+    e = karatsuba(xl + xr, yl + yr) - a - d
 
-num1 = 1234
-num2 = 5678
-value = karatsuba(num1, num2)
-print(value)
+    return a * 10**(2*n2) + e * 10**n2 + d
+
+print(karatsuba(1234, 5678))
