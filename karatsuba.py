@@ -15,7 +15,7 @@
 """
 
 def karatsuba(x,y):
-    """convert to string to enumerate the indexes for the digits"""
+    
     xs = str(x) 
     ys = str(y)
     lx = len(xs)
@@ -31,7 +31,6 @@ def karatsuba(x,y):
     n1 = (m + 1)//2
     n2 = m//2
 
-    """divide evenly number of digits: x on right, and x on the left"""
     xl = int(xs[:n1])
     xr = int(xs[n1:])
 
