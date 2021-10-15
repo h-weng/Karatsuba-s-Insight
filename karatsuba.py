@@ -3,7 +3,7 @@
 """
     To compute x * y
     
-    We divide into 3 subproblems (this is the standard formula):
+    We divide into 3 subproblems:
 
     a = x.l y.l 
     d = x.r y.r
