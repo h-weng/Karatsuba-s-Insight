@@ -1,16 +1,18 @@
-"""Karatsuba's Insight"""
-
 """
-    To compute x * y
+
+    Karatsuba's Insight
+    ===================
     
-    We divide into 3 subproblems:
+    To compute x * y we divide into 3 subproblems:
 
-    a = x.l y.l 
-    d = x.r y.r
-    e = (x.l + x.r)(y.l + y.r) - a - d
-    xy = ar^n + er^(n/2) + d
+        a = x.l y.l 
+        d = x.r y.r
+        e = (x.l + x.r)(y.l + y.r) - a - d
+        xy = ar^n + er^(n/2) + d
 
-    T(n) = 3T(n/2) + O(n)
+    Computation time:
+    
+        T(n) = 3T(n/2) + O(n)
 
 """
 
